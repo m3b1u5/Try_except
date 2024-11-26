@@ -10,10 +10,10 @@
 # Использует блок finally, чтобы вывести сообщение о завершении работы программы.
 
 def calc():
-    first_digit = float(input("Enter first digit: "))
-    second_digit = float(input("Enter second digit: "))
 
     try:
+        first_digit = float(input("Enter first digit: "))
+        second_digit = float(input("Enter second digit: "))
         result = first_digit / second_digit
 
     except ValueError:
