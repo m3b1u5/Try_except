@@ -1,22 +1,33 @@
 # Exception handling
 
+def get_num(prompt):
+    while True:
+        try:
+            num = float(input(prompt))
+            return num
+        except ValueError:
+            print("Ошибка - введено некорректное число")
+
+
 def calc():
     try:
-        first_digit = float(input("Введите первое число: "))
-        second_digit = float(input("Введите второе число: "))
-        result = first_digit / second_digit
-
+        first_num = get_num("Введите первое число: ")
+        second_num = get_num("Введите второе число: ")
+        result = first_num / second_num
     except ValueError:
-        print("Ошибка - введено некорректное число")
+        print("Ошибка - введено некорректное число\n")
     except ZeroDivisionError:
-        print("Ошибка деления на ноль")
-
+        print("Ошибка деления на ноль\n")
+        calc()
     else:
         print(f"Результат: {result}")
 
+
+def main():
+    try:
+        calc()
     finally:
         print("Завершено\n")
-        calc()
 
 
-calc()
+main()
